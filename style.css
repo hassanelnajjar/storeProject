@@ -1,3 +1,22 @@
-p{
-    color:red;
+
+/*my framwarck*/
+@media (max-width:767px){
+    .contener{
+        width: 100%;
+    }
+}
+@media (min-width:768px) and (max-width:991px){
+    .contener{
+        width: 737px;
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .contener{
+        width: 962px;
+    }
+}
+@media (max-width:1200px){
+    .contener{
+        width: 1170px;
+    }
 }
