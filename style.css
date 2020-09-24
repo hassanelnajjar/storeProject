@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 80px;
+  width: 50%;
+  height: 800px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: dotted
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: dotted;
+}
+
+.Catagory {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: dotted;
+  margin: auto;
+}
+
+.Product {
+  border: dotted;
+  margin: auto;
+}
