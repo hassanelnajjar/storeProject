@@ -2,17 +2,18 @@ const products = [
 	{
 		name: 'balls',
 		id: '10001',
-		price: 25.58,
+		price: 28.58,
 		imgSrc: './img/sports/balls.jpg',
 		owner: 'hassan',
 		ownerCode: 'Ow-001',
 		catogrey: 'sports',
 		catogreyCode: 'sports-001',
 	},
+
 	{
 		name: 'footballs',
 		id: '10002',
-		price: 25.58,
+		price: 30.47,
 		imgSrc: './img/sports/footballs.jpg',
 		owner: 'hassan',
 		ownerCode: 'Ow-001',
@@ -22,7 +23,7 @@ const products = [
 	{
 		name: 'backetballs',
 		id: '10003',
-		price: 25.58,
+		price: 10.51,
 		imgSrc: './img/sports/backetballs.jpg',
 		owner: 'hassan',
 		ownerCode: 'Ow-001',
@@ -32,7 +33,7 @@ const products = [
 	{
 		name: 'mouses',
 		id: '10004',
-		price: 25.58,
+		price: 12.77,
 		imgSrc: './img/tech/mouses.jpg',
 		owner: 'hassan',
 		ownerCode: 'Ow-001',
@@ -42,7 +43,7 @@ const products = [
 	{
 		name: 'iphone',
 		id: '10005',
-		price: 25.58,
+		price: 252.5,
 		imgSrc: './img/tech/iphone.jpg',
 		owner: 'hassan',
 		ownerCode: 'Ow-001',
@@ -52,7 +53,7 @@ const products = [
 	{
 		name: 'keybored',
 		id: '10006',
-		price: 25.58,
+		price: 24.9,
 		imgSrc: './img/tech/keybored.jpg',
 		owner: 'hassan',
 		ownerCode: 'Ow-001',
@@ -89,6 +90,36 @@ const products = [
 		catogrey: 'clothes',
 		catogreyCode: 'clothes-001',
 	},
+	{
+		name: 'balls',
+		id: '10010',
+		price: 28.58,
+		imgSrc: './img/sports/balls.jpg',
+		owner: 'hassan',
+		ownerCode: 'Ow-001',
+		catogrey: 'sports',
+		catogreyCode: 'sports-001',
+	},
+	{
+		name: 'balls',
+		id: '10011',
+		price: 28.58,
+		imgSrc: './img/sports/balls.jpg',
+		owner: 'hassan',
+		ownerCode: 'Ow-001',
+		catogrey: 'sports',
+		catogreyCode: 'sports-001',
+	},
+	{
+		name: 'balls',
+		id: '10012',
+		price: 28.58,
+		imgSrc: './img/sports/balls.jpg',
+		owner: 'hassan',
+		ownerCode: 'Ow-001',
+		catogrey: 'sports',
+		catogreyCode: 'sports-001',
+	},
 ];
 
 let createCatagoryDiv = (ParentDiv, id) => {
@@ -112,9 +143,13 @@ let createProductDiv = (ParentDiv, innerText, src, ProductObj) => {
 	let img = document.createElement('img');
 	img.src = src;
 
+	let priceSpan = document.createElement('span');
+	priceSpan.className = 'badge';
+	priceSpan.innerText = ProductObj.price + ' $';
 	let button = document.createElement('button');
-	button.textContent = 'Add To Shopping Backet';
-	ProductDiv.append(img, button);
+	button.textContent = 'Add To Shopping cart';
+	button.id = 'buy';
+	ProductDiv.append(img, priceSpan, button);
 	ParentDiv.appendChild(ProductDiv);
 	button.onclick = () => {
 		addToShopping(ProductDiv, ProductObj);
@@ -170,3 +205,7 @@ const addToShopping = (ProductDiv, ProductObj) => {
 	let count = Object.values(objCount).reduce((a, b) => a + b);
 	createBadgeElement(document.getElementById('shoppingBasket'), count);
 };
+
+//Create Slideshow ...
+
+

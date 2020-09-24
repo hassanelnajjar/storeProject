@@ -30,17 +30,23 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   /* border: dotted; */
-  margin: auto;
+  margin-bottom: 20px;
 }
 
 .Product {
-  /* border: dotted; */
+  box-sizing: border-box;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   margin: auto;
 }
 
 img {
-  width: 200px;
-  height: auto;
+  max-width: 100%;
+  max-height: 70%;
 }
 
 #shoppingBasket {
@@ -57,7 +63,6 @@ img {
 }
 
 .badge {
-  order: 1;
   background-color: rgb(0, 123, 255);
   padding: 5px;
   font-size: 100%;
@@ -65,11 +70,43 @@ img {
   font-weight: 700;
   text-align: center;
   line-height: 1;
-  color: rgb(241, 235, 235);
+  color: rgb(255, 255, 255);
+}
+
+#shoppingBasket .badge {
+  order: 1
 }
 
 #imgShoppingCart {
   order: 2;
   width: 50px;
   height: auto;
+}
+
+#buy {
+  display: inline-block;
+  font-weight: 400;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  color: #28a745;
+  background-color: transparent;
+  background-image: none;
+  border-color: #28a745;
+  cursor: pointer;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#buy:hover {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
 }
