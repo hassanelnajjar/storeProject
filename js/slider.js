@@ -12,7 +12,6 @@ class Slider {
 		this.TurnFirstSlides(maxNoOfDivs);
 	}
 	plusSlides = (value) => {
-		console.log('hassan');
 		this.TurnOffSlides();
 		this.TurnOnSildes(value);
 	};

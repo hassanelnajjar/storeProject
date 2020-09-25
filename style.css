@@ -36,8 +36,8 @@ body {
 
 .Product {
   box-sizing: border-box;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -51,8 +51,11 @@ img {
 }
 
 #shoppingBasket {
-  width: 200px;
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: auto;
 
 }
 
