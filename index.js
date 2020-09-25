@@ -179,6 +179,15 @@ const objectKeyCount = (obj, key) => {
 	return obj;
 };
 
+const createCatagoryArray = () => {
+	let CatagoryArray = {};
+	products.forEach((product) => {
+		objectKeyCount(CatagoryArray, product.catogrey);
+	});
+	console.log(CatagoryArray);
+	return Object.keys(CatagoryArray);
+};
+
 const createBadgeElement = (ParentDiv, count) => {
 	if (document.getElementById('imgShoppingCart')) {
 		document.getElementById('CountOfShoppingItems').innerText = count;
@@ -207,5 +216,22 @@ const addToShopping = (ProductDiv, ProductObj) => {
 };
 
 //Create Slideshow ...
+createCatagoryArray().forEach((cato) => {
+	console.log(cato);
+	let slider = new Slider(2, cato, 'Product');
+	let catoDiv = document.getElementById(cato);
+	let prevButton = document.createElement('a');
+	prevButton.className = 'prev';
+	prevButton.innerHTML = '&#10094;';
+	prevButton.onclick = () => {
+		slider.plusSlides(-1);
+	};
 
-
+	let nextButton = document.createElement('a');
+	nextButton.className = 'next';
+	nextButton.innerHTML = '&#10095;';
+	nextButton.onclick = () => {
+		slider.plusSlides(1);
+	};
+	catoDiv.append(prevButton, nextButton);
+});
