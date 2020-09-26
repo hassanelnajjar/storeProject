@@ -12,62 +12,22 @@
 </head>
 
 <body>
-
-  <div id="user"></div>
-  <div id="dealer">
-    <div id="header"></div>
-    <div class="card" id="form">
-      <div id="cardHeader">
-        <h3>Product Data</h3>
-      </div>
-
-      <form class="cardBody" action="">
-        <div class="row-group">
-          <label for="Product-name">Name</label>
-          <input class="form-control" type="text" id="Product-name">
-        </div>
-        <div class="row-group">
-          <label for="Product-price">Price</label>
-          <input class="form-control" type="number" id="Product-price">
-        </div>
-        <div class="row-group">
-          <label for="Product-catogrey">Catogrey</label>
-          <input class="form-control" type="text" id="Product-catogrey">
-        </div>
-        <!-- Custom File Input -->
-        <label for="Product-imgSrc">Image</label>
-        <div class="row-group file">
-          <input accept=".jpg, .jpeg, .png" class="" hidden="hidden" type="file" id="Product-imgSrc_cutom">
-          <button type="button" id="custom_upload_btn">Browse</button>
-          <span id="custom_text_span">No File Chosen</span>
-        </div>
-
-        <div class="row-group">
-          <button id="AddProductBtn" class="btn" type="button">Add Product</button>
-        </div>
-
-      </form>
-
-
-
-
+  <div id="main">
+    <div id="mainimg">
+      <!-- <img src="./img/images.jpg" alt="" srcset=""> -->
     </div>
-    <div id="dealerProduct"></div>
-    <div id="footer"></div>
-  </div>
-  <div class="container">
-    <div class="Productcontainer">
-      <div id="inputs"></div>
-      <div id="products"></div>
+
+    <div id="user">
+      <button class="btn" id="GoToProduct" type="button">Products</button>
     </div>
-    <div id="shoppingBasket"></div>
+    <div id="dealer">
+      <button class="btn" id="GoToEnterData" type="button">Add Product</button>
+    </div>
   </div>
 
-  <script src="./js/slider.js"></script>
-  <script src="./js/data.js"></script>
-  <script src="./js/mainFunctions.js"></script>
+
+
   <script src="./index.js"></script>
-
 </body>
 
 </html>
