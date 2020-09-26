@@ -64,6 +64,15 @@ class Slider {
 		this.shownDivs = this.sildesArray.slice(0, maxNoOfDivs);
 		this.shownDivs.forEach((x) => (x.style.display = 'flex'));
 	}
+	updateSlider(maxNoOfDivs, CatogeryID, ClassOfOneSlides) {
+		this.sildesArray = [
+			...document.querySelectorAll(`#${CatogeryID} .${ClassOfOneSlides}`),
+		];
+		this.maxNoOfDivs = maxNoOfDivs;
+		this.changeArrayToCircularArray();
+		this.TurnOffSlides();
+		this.TurnFirstSlides(maxNoOfDivs);
+	}
 
 	TurnOffSlides() {
 		this.sildesArray.forEach(

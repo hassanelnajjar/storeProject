@@ -21,24 +21,27 @@ const objectKeyCount = (obj, key) => {
 };
 
 let createProductDiv = (ParentDiv, innerText, src, ProductObj) => {
-	let ProductDiv = document.createElement('div');
-	//ProductDiv.innerText = innerText;
-	ProductDiv.className = 'Product';
+	if (document.getElementById(ProductObj.id)) {
+	} else {
+		let ProductDiv = document.createElement('div');
+		ProductDiv.id = ProductObj.id;
+		ProductDiv.className = 'Product';
 
-	let img = document.createElement('img');
-	img.src = src;
+		let img = document.createElement('img');
+		img.src = src;
 
-	let priceSpan = document.createElement('span');
-	priceSpan.className = 'badge';
-	priceSpan.innerText = ProductObj.price + ' $';
-	let button = document.createElement('button');
-	button.textContent = 'Add To Shopping cart';
-	button.id = 'buy';
-	ProductDiv.append(img, priceSpan, button);
-	ParentDiv.appendChild(ProductDiv);
-	button.onclick = () => {
-		addToShopping(ProductDiv, ProductObj);
-	};
+		let priceSpan = document.createElement('span');
+		priceSpan.className = 'badge';
+		priceSpan.innerText = ProductObj.price + ' $';
+		let button = document.createElement('button');
+		button.textContent = 'Add To Shopping cart';
+		button.id = 'buy';
+		ProductDiv.append(img, priceSpan, button);
+		ParentDiv.appendChild(ProductDiv);
+		button.onclick = () => {
+			addToShopping(ProductDiv, ProductObj);
+		};
+	}
 };
 
 const createCatagoryArray = () => {
@@ -93,24 +96,40 @@ const calcualteWidthOfProductVsCato = () => {
 	return Math.floor(widthOfCatoDiv / widthOfProdcut);
 };
 
+let CatoDivObjForSliders = {};
 const createSliders = (noOfProductPerEachCato) => {
-	CatagoreyArrayIds.forEach((cato) => {
-		let slider = new Slider(noOfProductPerEachCato, cato, 'Product');
-		let catoDiv = document.getElementById(cato);
-		let prevButton = document.createElement('a');
-		prevButton.className = 'prev';
-		prevButton.innerHTML = '&#10094;';
-		prevButton.onclick = () => {
-			slider.plusSlides(-1);
-		};
+	createCatagoryArray().forEach((cato) => {
+		if (
+			document.getElementById('prevBtn-' + cato) &&
+			document.getElementById('nextBtn-' + cato)
+		) {
+			CatoDivObjForSliders[cato].updateSlider(
+				noOfProductPerEachCato,
+				cato,
+				'Product'
+			);
+		} else {
+			let slider = new Slider(noOfProductPerEachCato, cato, 'Product');
+			CatoDivObjForSliders[cato] = slider;
+			let catoDiv = document.getElementById(cato);
+			let prevButton = document.createElement('a');
+			prevButton.id = 'prevBtn-' + cato;
+			prevButton.className = 'prev';
+			prevButton.innerHTML = '&#10094;';
+			prevButton.onclick = () => {
+				slider.plusSlides(-1);
+			};
+			let nextButton = document.createElement('a');
+			nextButton.id = 'nextBtn-' + cato;
+			nextButton.className = 'next';
+			nextButton.innerHTML = '&#10095;';
+			nextButton.onclick = () => {
+				slider.plusSlides(1);
+			};
 
-		let nextButton = document.createElement('a');
-		nextButton.className = 'next';
-		nextButton.innerHTML = '&#10095;';
-		nextButton.onclick = () => {
-			slider.plusSlides(1);
-		};
-		catoDiv.append(prevButton, nextButton);
+			catoDiv.appendChild(prevButton);
+			catoDiv.appendChild(nextButton);
+		}
 	});
 };
 

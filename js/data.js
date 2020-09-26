@@ -1,4 +1,4 @@
-const products = [
+let productsData = [
 	{
 		name: 'balls',
 		id: '10001',
@@ -121,3 +121,17 @@ const products = [
 		catogreyCode: 'sports-001',
 	},
 ];
+
+//Store The Data inside LocalStorage For The First Run ..
+if (localStorage.getItem('products')) {
+	products = JSON.parse(localStorage.getItem('products'));
+} else {
+	//Set The Local Storage of The first Time and then set it's value to products
+	localStorage.setItem('products', JSON.stringify(productsData));
+	products = JSON.parse(localStorage.getItem('products'));
+}
+
+const updateLocalStorage = (data) => {
+	localStorage.setItem('products', JSON.stringify(data));
+	return JSON.parse(localStorage.getItem('products'));
+};

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GSC Store</title>
   <link rel="stylesheet" href="./css/slider.css">
+  <link rel="stylesheet" href="./css/form.css">
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -14,7 +15,45 @@
 
   <div id="user"></div>
   <div id="dealer">
-    
+    <div id="header"></div>
+    <div class="card" id="form">
+      <div id="cardHeader">
+        <h3>Product Data</h3>
+      </div>
+
+      <form class="cardBody" action="">
+        <div class="row-group">
+          <label for="Product-name">Name</label>
+          <input class="form-control" type="text" id="Product-name">
+        </div>
+        <div class="row-group">
+          <label for="Product-price">Price</label>
+          <input class="form-control" type="number" id="Product-price">
+        </div>
+        <div class="row-group">
+          <label for="Product-catogrey">Catogrey</label>
+          <input class="form-control" type="text" id="Product-catogrey">
+        </div>
+        <!-- Custom File Input -->
+        <label for="Product-imgSrc">Image</label>
+        <div class="row-group file">
+          <input accept=".jpg, .jpeg, .png" class="" hidden="hidden" type="file" id="Product-imgSrc_cutom">
+          <button type="button" id="custom_upload_btn">Browse</button>
+          <span id="custom_text_span">No File Chosen</span>
+        </div>
+
+        <div class="row-group">
+          <button id="AddProductBtn" class="btn" type="button">Add Product</button>
+        </div>
+
+      </form>
+
+
+
+
+    </div>
+    <div id="dealerProduct"></div>
+    <div id="footer"></div>
   </div>
   <div class="container">
     <div class="Productcontainer">
